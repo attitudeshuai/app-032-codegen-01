@@ -109,6 +109,16 @@ function updatedAt(iso: string): string {
       </table>
     </section>
 
+    <section class="block cutting-entry">
+      <h2>作坊下料台 <em>（按现有竹篾配切：每根篾截给哪些件、剩多少留用、还要添几根）</em></h2>
+      <p>
+        库内竹篾长短不一，接单后先到下料台：录入库存长度与根数、填好几种灯各做几盏，
+        在「先保长件（省料）」与「先凑短件（省时）」两条互斥路线里选一条，
+        由系统整批配切——构件表、备料/添料单、本机存档三处同源，改盏数或换库存即整批重算并列清三处变化。
+      </p>
+      <router-link class="go-cutting" to="/cutting">进入竹篾配切下料台 →</router-link>
+    </section>
+
     <section class="block">
       <h2>蒙面与工艺参数</h2>
       <div class="covers">
@@ -190,6 +200,32 @@ function updatedAt(iso: string): string {
   color: var(--ink);
   border-left: 4px solid var(--red);
   padding-left: 10px;
+}
+
+.cutting-entry {
+  background: linear-gradient(135deg, #fff8ea, #f6ead0);
+  border-color: var(--gold);
+}
+
+.cutting-entry p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  max-width: 880px;
+}
+
+.go-cutting {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.go-cutting:hover {
+  background: #9c1f1b;
 }
 
 .block h2 em {

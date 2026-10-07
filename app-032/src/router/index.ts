@@ -7,6 +7,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/panels/:id', name: 'panels', component: () => import('../views/PanelsView.vue'), meta: { title: '蒙面裁片与缝份' } },
   { path: '/print/:id', name: 'print', component: () => import('../views/PrintView.vue'), meta: { title: '1:1 放样图' } },
   { path: '/materials/:id', name: 'materials', component: () => import('../views/MaterialsView.vue'), meta: { title: '材料统计与备料单' } },
+  { path: '/cutting', name: 'cutting', component: () => import('../views/CuttingView.vue'), meta: { title: '竹篾配切下料' } },
   { path: '/:pathMatch(.*)*', redirect: '/' }
 ]
 

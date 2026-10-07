@@ -18,7 +18,8 @@ const nav = computed(() => {
     { to: `/frame/${id}`, label: '骨架件表' },
     { to: `/panels/${id}`, label: '蒙面裁片' },
     { to: `/print/${id}`, label: '1:1 放样图' },
-    { to: `/materials/${id}`, label: '材料与备料' }
+    { to: `/materials/${id}`, label: '材料与备料' },
+    { to: '/cutting', label: '竹篾配切下料' }
   ]
 })
 </script>
