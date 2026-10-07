@@ -14,6 +14,7 @@ const nav = computed(() => {
   const id = lanternId.value
   if (!id) return []
   return [
+    { to: `/cut`, label: '配切作坊' },
     { to: `/design/${id}`, label: '参数与预览' },
     { to: `/frame/${id}`, label: '骨架件表' },
     { to: `/panels/${id}`, label: '蒙面裁片' },
@@ -33,9 +34,12 @@ const nav = computed(() => {
           <em>Lantern Frame Lofting · 全 mm 单位 · 1:1 可打印</em>
         </span>
       </router-link>
-      <nav v-if="nav.length" class="app-nav">
-        <span class="app-nav-name" :title="currentName">{{ currentName }}</span>
-        <router-link v-for="n in nav" :key="n.to" :to="n.to">{{ n.label }}</router-link>
+      <nav class="app-nav">
+        <router-link to="/cut" class="cut-nav">配切作坊</router-link>
+        <template v-if="nav.length">
+          <span class="app-nav-name" :title="currentName">{{ currentName }}</span>
+          <router-link v-for="n in nav" :key="n.to" :to="n.to">{{ n.label }}</router-link>
+        </template>
       </nav>
     </header>
 
@@ -188,6 +192,12 @@ a {
   color: #8f1c19;
   border-color: #c9a227;
   font-weight: 600;
+}
+
+.cut-nav {
+  font-weight: 700;
+  background: rgba(246, 227, 186, 0.22);
+  border: 1px solid rgba(246, 227, 186, 0.55) !important;
 }
 
 .app-main {

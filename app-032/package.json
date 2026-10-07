@@ -8,7 +8,10 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "test:cut": "esbuild scripts/cut-test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/cut-test.mjs && node node_modules/.cache/cut-test.mjs",
+    "test:cut-store": "esbuild scripts/cut-store-test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/cut-store-test.mjs && node node_modules/.cache/cut-store-test.mjs",
+    "test": "npm run test:cut && npm run test:cut-store"
   },
   "dependencies": {
     "vue": "^3.5.13",

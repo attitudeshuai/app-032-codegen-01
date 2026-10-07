@@ -43,6 +43,11 @@ function updatedAt(iso: string): string {
         做花灯不用再拿尺子在纸上比划：每根竹篾要截多长、弯什么角度，每块蒙面要裁多大（缝份已算进去），
         一页一页按 1:1 打印出来就能拓印到纸上用。
       </p>
+      <p class="cut-entry">
+        库里已有一批长短不一的竹篾、要按单子配切下料？进
+        <router-link to="/cut" class="cut-link">配切下料作坊 →</router-link>
+        按现有库存算每根篾截给哪些件、哪几根留用、废料多少、还要添几根。
+      </p>
       <ul class="steps">
         <li><b>1</b> 选灯型并填最大直径、总高、收口、层数</li>
         <li><b>2</b> 看骨架件表：竖篾/横篾/收口圈的净长与含余量截取长度</li>
@@ -157,8 +162,20 @@ function updatedAt(iso: string): string {
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 10px;
   list-style: none;
-  margin: 0;
+  margin: 0 0 10px;
   padding: 0;
+}
+
+.cut-entry {
+  background: #fdf3ef;
+  border: 1px solid var(--red-soft);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.cut-link {
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .steps li {
